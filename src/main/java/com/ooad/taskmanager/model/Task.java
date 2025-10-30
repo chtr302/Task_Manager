@@ -39,8 +39,14 @@ public class Task {
     @Column(name = "project_id")
     private Long projectId;
 
+    @Column(name = "progress_note")
+    private String progressNote;
+
     @Column(name = "created_by")
     private Long createdBy;
+
+    @Column(name = "updated_by")
+    private Long updatedBy;
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -112,6 +118,22 @@ public class Task {
 
     public void setCreatedBy(Long createdBy) {
         this.createdBy = createdBy;
+    }
+
+    public String getProgressNote() {
+        return progressNote;
+    }
+
+    public void setProgressNote(String progressNote) {
+        this.progressNote = progressNote;
+    }
+
+    public Long getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(Long updatedBy) {
+        this.updatedBy = updatedBy;
     }
 
     public LocalDateTime getCreatedAt() {

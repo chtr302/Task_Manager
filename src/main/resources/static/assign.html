@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Task</title>
+    <link rel="stylesheet" href="css/assign.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Giao Việc Cho Thành Viên</h1>
+        <form id="assign-task-form">
+            <div class="form-group">
+                <label for="assignProjectId">Dự án</label>
+                <select id="assignProjectId" name="projectId"></select>
+            </div>
+            <div class="form-group">
+                <label for="assignTaskId">Công việc</label>
+                <select id="assignTaskId" name="taskId"></select>
+            </div>
+            <div class="form-group">
+                <label for="taskDueDate">Deadline công việc (task due_date)</label>
+                <input type="text" id="taskDueDate" name="taskDueDate" readonly placeholder="Due date sẽ hiển thị khi chọn công việc">
+            </div>
+            <div class="form-group">
+                <label for="assignEmployeePicker">Nhân viên (chọn nhiều)</label>
+                <button type="button" id="open-employee-picker">Chọn nhân viên</button>
+                <div id="employee-picker" style="display:none; margin-top:0.5rem; max-height:200px; overflow:auto; border:1px solid #ddd; padding:0.5rem;">
+                    <!-- employee rows sẽ được render ở đây: mỗi row chứa checkbox + tên + select role -->
+                </div>
+            </div>
+            <button type="submit">Giao Việc</button>
+        </form>
+        <div id="assign-result"></div>
+    </div>
+    <script src="js/assign.js"></script>
+</body>
+</html>

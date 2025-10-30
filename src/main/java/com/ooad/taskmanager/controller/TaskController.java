@@ -29,10 +29,14 @@ public class TaskController {
     private TaskManager taskManager;
 
     @Autowired
+    private com.ooad.taskmanager.repository.TaskRepository taskRepository;
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private com.ooad.taskmanager.repository.EmployeeRepository employeeRepository;
+
     @Autowired
     private com.ooad.taskmanager.repository.ProjectRepository projectRepository;
 
@@ -75,6 +79,8 @@ public class TaskController {
 
     public static record EmployeeAssign(Long employeeId, String roleInTask) {}
     public static record AssignRequest(Long taskId, List<EmployeeAssign> assignees) {}
+
+    public static record TaskAssigneeRecord(Long taskId, Long employeeId, String roleInTask) {}
 
     @PostMapping("/assign")
     public ResponseEntity<String> assign(@RequestBody AssignRequest req) {

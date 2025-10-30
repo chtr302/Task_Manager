@@ -1,59 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Progress Tracker</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Theo Dõi Tiến Độ Công Việc</title>
+    <link rel="stylesheet" href="css/progress.css">
 </head>
 <body>
     <div class="container">
-        <h1>Task Progress Tracker</h1>
+        <h1>Theo Dõi Tiến Độ Công Việc</h1>
 
         <div class="user-selection">
-            <label for="userId">Select User ID:</label>
+            <label for="userId">Chọn ID Nhân Viên:</label>
             <input type="number" id="userId" value="1" min="1">
-            <button id="load-tasks-btn">Load My Tasks</button>
+            <button id="load-tasks-btn">Tải Công Việc Của Tôi</button>
         </div>
 
         <div id="tasks-container">
-            <h2>My Tasks</h2>
+            <h2>Công Việc Của Tôi</h2>
             <div id="tasks-list"></div>
         </div>
 
         <div id="update-form" style="display: none;">
-            <h2>Update Task Progress</h2>
+            <h2>Cập Nhật Tiến Độ Công Việc</h2>
             <form id="progress-update-form">
                 <input type="hidden" id="update-task-id">
 
                 <div class="form-group">
-                    <label for="task-name">Task Name:</label>
+                    <label for="task-name">Tên Công Việc:</label>
                     <input type="text" id="task-name" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="current-status">Current Status:</label>
+                    <label for="current-status">Trạng Thái Hiện Tại:</label>
                     <input type="text" id="current-status" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="new-status">New Status:</label>
+                    <label for="new-status">Trạng Thái Mới:</label>
                     <select id="new-status" required>
-                        <option value="TO_DO">To Do</option>
-                        <option value="IN_PROGRESS">In Progress</option>
-                        <option value="REVIEW">Review</option>
-                        <option value="DONE">Done</option>
-                        <option value="CANCELLED">Cancelled</option>
+                        <option value="TO_DO">Chưa Bắt Đầu</option>
+                        <option value="IN_PROGRESS">Đang Thực Hiện</option>
+                        <option value="REVIEW">Đang Xem Xét</option>
+                        <option value="DONE">Hoàn Thành</option>
+                        <option value="CANCELLED">Đã Hủy</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="progress-note">Progress Note:</label>
-                    <textarea id="progress-note" rows="3" placeholder="Describe your progress..."></textarea>
+                    <label for="progress-note">Ghi Chú Tiến Độ:</label>
+                    <textarea id="progress-note" rows="3" placeholder="Mô tả chi tiết tiến độ công việc..."></textarea>
                 </div>
 
-                <button type="submit">Update Progress</button>
-                <button type="button" id="cancel-update">Cancel</button>
+                <button type="submit">Cập Nhật Tiến Độ</button>
+                <button type="button" id="cancel-update">Hủy</button>
             </form>
         </div>
 
